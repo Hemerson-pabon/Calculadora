@@ -13,7 +13,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane layoutX="161.0" prefHeight="519.0" prefWidth="438.0">
@@ -45,9 +44,9 @@
                   </Pane>
                   <FlowPane layoutX="14.0" layoutY="157.0" prefHeight="337.0" prefWidth="414.0" style="-fx-background-color: #000;">
                      <children>
-                        <Button fx:id="potenciaDosButton" mnemonicParsing="false" onAction="#potenciaDosClick" prefHeight="55.0" prefWidth="60.0" text="x²">
+                        <Button fx:id="logaritmoNaturalButton" mnemonicParsing="false" onAction="#logaritmoNaturalClick" prefHeight="55.0" prefWidth="60.0" text="Ln(x)">
                            <font>
-                              <Font name="Roboto Medium" size="25.0" />
+                              <Font name="Roboto Medium" size="16.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
@@ -223,7 +222,7 @@
                   </FlowPane>
                </children>
             </Pane>
-            <Pane fx:id="trigonometricPane" prefHeight="519.0" prefWidth="430.0" style="-fx-background-color: #000;">
+            <Pane fx:id="trigonometricPane" prefHeight="519.0" prefWidth="430.0" style="-fx-background-color: #000;" visible="false">
                <children>
                   <Pane prefHeight="66.0" prefWidth="438.0" style="-fx-background-color: #8789C0;">
                      <children>

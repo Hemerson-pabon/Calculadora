@@ -9,7 +9,7 @@ public class CalculadoraViewController {
     @FXML
     private Button menuButton;
     @FXML
-    private Button potenciaDosButton;
+    private Button logaritmoNaturalButton;
     @FXML
     private Button potenciaNButton;
     @FXML
