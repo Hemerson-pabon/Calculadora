@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.calculadora.CalculadoraViewController" >
    <children>
       <StackPane layoutX="161.0" prefHeight="519.0" prefWidth="438.0">
          <children>
@@ -110,7 +110,7 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="productoButton" mnemonicParsing="false" onAction="#productoClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="*" textFill="WHITE">
+                        <Button fx:id="productoButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="*" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -164,7 +164,7 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="oneButton" mnemonicParsing="false" onAction="#oneCLick" prefHeight="55.0" prefWidth="60.0" text="1">
+                        <Button fx:id="oneButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" text="1">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -212,7 +212,7 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="totalButton" mnemonicParsing="false" onAction="#totalCLick" prefHeight="55.0" prefWidth="132.0" style="-fx-background-color: #5AB507;" text="=" textFill="WHITE">
+                        <Button fx:id="totalButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="132.0" style="-fx-background-color: #5AB507;" text="=" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -261,25 +261,25 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="sumaTriButton" mnemonicParsing="false" onAction="#sumaTriButton" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="+" textFill="WHITE">
+                        <Button fx:id="sumaTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="+" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="14.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="menosTriButton" mnemonicParsing="false" onAction="#menosTriButton" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="-" textFill="WHITE">
+                        <Button fx:id="menosTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="-" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="20.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="divisionTriButton" mnemonicParsing="false" onAction="#divisionTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="/" textFill="WHITE">
+                        <Button fx:id="divisionTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="/" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="20.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="multiplicacionTriButton" mnemonicParsing="false" onAction="#multiplicacionTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="*" textFill="WHITE">
+                        <Button fx:id="multiplicacionTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #7CC6FE;" text="*" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -297,19 +297,19 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="sevenTriButton" mnemonicParsing="false" onAction="#sevenTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="7">
+                        <Button fx:id="sevenTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="7">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="eigthTriButton" mnemonicParsing="false" onAction="#eigthTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="8">
+                        <Button fx:id="eigthTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="8">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="nineTriButton" mnemonicParsing="false" onAction="#nineTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="9">
+                        <Button fx:id="nineTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="9">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -333,19 +333,19 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="fourTriButton" mnemonicParsing="false" onAction="#fourTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="4">
+                        <Button fx:id="fourTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="4">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="fiveTriButton" mnemonicParsing="false" onAction="#fiveTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="5">
+                        <Button fx:id="fiveTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="5">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="sixTriButton" mnemonicParsing="false" onAction="#sixTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="6">
+                        <Button fx:id="sixTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="6">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -369,19 +369,19 @@
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="oneTriButton" mnemonicParsing="false" onAction="#oneTriCLick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="1">
+                        <Button fx:id="oneTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="1">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="twoTriButton" mnemonicParsing="false" onAction="#twoTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="2">
+                        <Button fx:id="twoTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="2">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="threeTriButton" mnemonicParsing="false" onAction="#threeTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="3">
+                        <Button fx:id="threeTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="3">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
@@ -421,19 +421,19 @@
                            </textFill>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="decimalPointTriButton" mnemonicParsing="false" onAction="#decimalPointTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text=".">
+                        <Button fx:id="decimalPointTriButton" mnemonicParsing="false"  prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text=".">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="zeroTriButton" mnemonicParsing="false" onAction="#zeroTriClick" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="0">
+                        <Button fx:id="zeroTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: #FFF;" text="0">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="55.0" prefWidth="10.0" style="-fx-background-color: #000;" />
-                        <Button fx:id="totalTriButton" mnemonicParsing="false" onAction="#totalTriCLick" prefHeight="55.0" prefWidth="131.0" style="-fx-background-color: #5AB507;" text="=" textFill="WHITE">
+                        <Button fx:id="totalTriButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="131.0" style="-fx-background-color: #5AB507;" text="=" textFill="WHITE">
                            <font>
                               <Font name="Roboto Medium" size="25.0" />
                            </font>
