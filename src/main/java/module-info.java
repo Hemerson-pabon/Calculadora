@@ -9,6 +9,7 @@ module org.calculadora {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires exp4j;
     requires java.desktop;
 
     opens org.calculadora to javafx.fxml;
