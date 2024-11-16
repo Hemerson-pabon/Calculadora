@@ -1,15 +1,17 @@
 package org.calculadora;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.MathContext;
 import java.math.RoundingMode;
 
 
-public class funciones {
+public class Funciones {
 
     //MathContext mc = new MathContext(200, RoundingMode.UP);
     MathContext mc = MathContext.DECIMAL128;
 
+    public void setMc(MathContext mc) {
+        this.mc = mc;
+    }
 
     public BigDecimal factorial(int x){
         BigDecimal result = BigDecimal.ONE;
@@ -178,6 +180,8 @@ public class funciones {
         // Ajustar a la precisión deseada
         return guess.round(new MathContext(precision, RoundingMode.HALF_UP));
     }
+
+
 
 
 }

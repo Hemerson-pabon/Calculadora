@@ -1,5 +1,6 @@
 package org.calculadora;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 // Clase principal para usar el analizador
@@ -10,7 +11,7 @@ public class ExpresionMatematica {
         this.expresion = expresion;
     }
 
-    public double evaluar(Map<String, Double> variables) {
+    public BigDecimal evaluar(Map<String, BigDecimal> variables) {
         return AnalizadorExpresiones.evaluarExpresion(expresion, variables);
     }
 
