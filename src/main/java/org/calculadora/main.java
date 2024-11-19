@@ -19,9 +19,8 @@ public class main {
 
         try {
             ExpresionMatematica expresion = new ExpresionMatematica(expresionUsuario);
-            BigDecimal resultado = expresion.evaluar(variables);
+            BigDecimal resultado = expresion.evaluar();
 
-            // Formato personalizado para mostrar más decimales
             String resultadoStr = resultado.setScale(DECIMAL_PLACES, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString();
             System.out.println("Resultado: " + resultadoStr);
 

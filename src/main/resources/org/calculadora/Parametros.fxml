@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="274.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.calculadora.ParametrosController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="274.0" prefWidth="466.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="83.0" prefWidth="200.0">
+               <children>
+                  <Label text="Cantidad de decimales:">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" right="30.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="FieldCantDecimales" prefHeight="27.0" prefWidth="82.0">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="83.0" prefWidth="466.0">
+               <children>
+                  <Label text="Valor de n (series de potencias):">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" right="30.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="FieldN" prefHeight="27.0" prefWidth="77.0">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ButtonSaveClick" prefHeight="34.0" prefWidth="95.0" text="Guardar">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Microsoft Sans Serif" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

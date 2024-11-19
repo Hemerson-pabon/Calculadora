@@ -14,26 +14,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.calculadora.CalculadoraController">
    <children>
       <VBox prefHeight="600.0" prefWidth="400.0">
          <children>
             <MenuBar prefHeight="25.0" prefWidth="400.0">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="Opciones">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#ButtonEditClick" text="Editar parametros" />
+                        <MenuItem mnemonicParsing="false" onAction="#ButtonCloseAppClick" text="Close" />
                   </items>
                 </Menu>
               </menus>
@@ -235,7 +225,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="139.0" text="π" GridPane.columnIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonPiClick" prefHeight="72.0" prefWidth="139.0" text="π" GridPane.columnIndex="1">
                      <font>
                         <Font name="Lexend Deca Regular" size="24.0" />
                      </font>
@@ -243,7 +233,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="139.0" text="x²" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonXCuadClick" prefHeight="72.0" prefWidth="139.0" text="x²" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Lexend Deca Regular" size="22.0" />
                      </font>
@@ -251,7 +241,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="139.0" text="e" GridPane.columnIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtoneSClick" prefHeight="72.0" prefWidth="139.0" text="e" GridPane.columnIndex="2">
                      <font>
                         <Font name="Lexend Deca Regular" size="24.0" />
                      </font>

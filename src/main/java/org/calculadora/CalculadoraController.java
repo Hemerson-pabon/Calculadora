@@ -1,101 +1,65 @@
 package org.calculadora;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.*;
 
 public class CalculadoraController {
 
+    private static int cantDecimales = 3; // Cantidad de decimales a mostrar
+
+    public static void setCantDecimales(int cantDecimales) {
+        CalculadoraController.cantDecimales = cantDecimales;
+    }
+
+    public static int getCantDecimales() {
+        return cantDecimales;
+    }
 
     private String StringExpresion = "";
     private String StringTemp = "";
 
-    // Bandera para ver si se debe resetear el field temporal
-    private boolean flagStringExpresion = false;
+    // Bandera para verificar si se evaluó una expresión
     private boolean flagResult = false;
-    boolean flagSim = false;
 
-
-
+    // Método para adjuntar Strings
     private String AppendText(String string, String append){
-        StringBuilder builder = new StringBuilder();
-        builder.append(string);
-        builder.append(append);
-        return builder.toString();
+        return string +
+                append;
     }
 
-    // Método para asignar numeros
-
+    // Método para asignar números
     private void AsignarNum(String num){
-        if (flagStringExpresion){
-            //StringExpresion = StringTemp;
-            StringTemp = num;
-        }else {
-            StringTemp = AppendText(FieldTemp.getText(), num);
-        }
-        flagStringExpresion = false;
+        StringTemp = AppendText(FieldTemp.getText(), num);
         FieldTemp.setText(StringTemp);
     }
 
-    private void AsignarSim(String simbol){
-
-        if(flagResult){
-            StringExpresion = FieldTemp.getText();
-            StringTemp = "";
-            FieldExpresion.setText(StringExpresion);
-            FieldTemp.setText(StringTemp);
-            flagResult = false;
-        }
-        if (flagSim){
-            StringExpresion = FieldExpresion.getText();
-            StringTemp = FieldTemp.getText();
-            StringExpresion = AppendText(StringExpresion, StringTemp);
-
-            Map<String, BigDecimal> variables = new HashMap<>();
-            ExpresionMatematica expresion = new ExpresionMatematica(StringExpresion);
-            BigDecimal resultado = expresion.evaluar(variables);
-            String resultadoStr = resultado.setScale(4, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString();
-            FieldExpresion.setText(resultadoStr);
-            FieldTemp.setText("");
-            flagSim = false;
-            System.out.println("Entro a esta bandera");
-        }
-        StringTemp = FieldTemp.getText();
+    // Método para asignar un símbolo
+    private void AsignarSim(String sim){
         StringExpresion = FieldExpresion.getText();
-
-
-        if (Objects.equals(StringExpresion, "")){
-            StringExpresion = AppendText(StringExpresion,StringTemp);
-            StringExpresion = AppendText(StringExpresion,simbol);
-        }else {
-            StringExpresion = AppendText(StringExpresion,simbol);
+        StringTemp = FieldTemp.getText();
+        if(flagResult) {
+            StringExpresion = StringTemp;
         }
-
+        StringTemp = AppendText(StringTemp, sim);
+        FieldTemp.setText(StringTemp);
         FieldExpresion.setText(StringExpresion);
-        flagStringExpresion = true;
-
+        flagResult = false;
     }
 
-
-    // Text field donde va la expresion a calcular
-
+    // Text field de la calculadora
     @FXML
     private TextField FieldExpresion;
     @FXML
     private TextField FieldTemp;
 
-
-    private TextField FieldOperacion;
-
-
-    // Evento de click para los botones de numeros
-
-
-
+    // Eventos de clíck para los botones de números
     @FXML
     protected void ButtonZeroClick(){
         AsignarNum("0");
@@ -137,117 +101,101 @@ public class CalculadoraController {
         AsignarNum("9");
     }
 
-    // Eventos de clíck para los botones de simbolos
-
+    // Eventos de clíck para los botones de símbolos
     @FXML
     protected void ButtonSumClick(){
         AsignarSim("+");
-        flagSim = true;
     }
     @FXML
     protected void ButtonSubClick(){
         AsignarSim("-");
-        flagSim = true;
     }
     @FXML
     protected void ButtonProdClick(){
         AsignarSim("*");
-        flagSim = true;
     }
     @FXML
     protected void ButtonDivClick(){
         AsignarSim("/");
-        flagSim = true;
     }
 
     @FXML
     protected void ButtonOpenPClick(){
-        AsignarNum("(");
+        AsignarSim("(");
     }
     @FXML
     protected void ButtonClosePClick(){
-        AsignarNum(")");
+        AsignarSim(")");
     }
-
-
     @FXML
     protected void ButtonPointClick(){
         AsignarNum(".");
-        flagSim = true;
     }
 
-    // Boton de igual
+    // Botón de igual
     @FXML
     protected void ButtonResultClick(){
-        if (flagSim){
-            StringExpresion = FieldExpresion.getText();
-            StringTemp = FieldTemp.getText();
-            StringExpresion = AppendText(StringExpresion, StringTemp);
-
-            Map<String, BigDecimal> variables = new HashMap<>();
-            ExpresionMatematica expresion = new ExpresionMatematica(StringExpresion);
-            BigDecimal resultado = expresion.evaluar(variables);
-            String resultadoStr = resultado.setScale(4, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString();
-            FieldExpresion.setText(resultadoStr);
-            FieldTemp.setText("");
-            flagSim = false;
-        }
-
-        ArrayList<String> chars = new ArrayList<>(Arrays.asList("+","-","*","/"));
-        for (String cha : chars ){
-            if(!StringExpresion.isEmpty() && StringExpresion.charAt(StringExpresion.length() - 1) == cha.charAt(0) ){
-                StringExpresion = AppendText(StringExpresion, StringTemp);
-                FieldExpresion.setText(StringExpresion);
-            }
-        }
-
-        Map<String, BigDecimal> variables = new HashMap<>();
-        ExpresionMatematica expresion = new ExpresionMatematica(FieldExpresion.getText());
-        BigDecimal resultado = expresion.evaluar(variables);
-        String resultadoStr = resultado.setScale(4, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString();
-        FieldTemp.setText(resultadoStr);
         flagResult = true;
-        flagSim = true;
+        StringExpresion = FieldExpresion.getText();
+        StringTemp = FieldTemp.getText();
+        // Evaluar la expresión dada por el usuario
+        ExpresionMatematica expresion = new ExpresionMatematica(StringTemp);
+        BigDecimal resultado = expresion.evaluar();
+        String resultadoStr = resultado.setScale(cantDecimales, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString();
+        StringExpresion = StringTemp+" = ";
+        StringTemp = resultadoStr;
+        FieldExpresion.setText(StringExpresion);
+        FieldTemp.setText(StringTemp);
     }
 
     // Eventos de botones de funciones hechas con series
-
     @FXML
     protected void ButtonCosClick(){
-
+        AsignarNum("cos(");
     }
     @FXML
     protected void ButtonSinClick(){
-
+        AsignarNum("sin(");
     }
     @FXML
     protected void ButtonSqrtClick(){
-
+        AsignarNum("sqrt(");
     }
     @FXML
     protected void ButtonLnClick(){
-
+        AsignarNum("ln(");
     }
     @FXML
     protected void ButtoneClick(){
-
+        AsignarNum("exp(");
     }
     @FXML
-    protected void ButtonaClick(){}
+    protected void ButtonaClick(){
+        AsignarNum("^");
+    }
+    @FXML
+    protected void ButtonXCuadClick(){
+        AsignarNum("^2");
+    }
 
+    // Botones de constantes
+    @FXML
+    protected void ButtonPiClick(){
+        AsignarNum("π");
+    }
+    @FXML
+    protected void ButtoneSClick(){
+        AsignarNum("e");
+    }
 
-    // Boton de limpiar y remover
-
+    // Botón de limpiar y remover
     @FXML
     protected void ButtonClearAllClick(){
         StringExpresion = "";
         StringTemp = "";
         FieldExpresion.setText(StringExpresion);
         FieldTemp.setText(StringTemp);
-        flagSim = false;
-        flagResult = false;
     }
-
     @FXML
     protected void ButtonRemoveCharClick(){
         StringTemp = FieldTemp.getText();
@@ -257,6 +205,21 @@ public class CalculadoraController {
         FieldTemp.setText(StringTemp);
     }
 
+    // Menu de opciones
+    @FXML
+    protected void ButtonCloseAppClick(){
+        Stage stage = (Stage) FieldExpresion.getScene().getWindow();
+        stage.close();
+    }
+    @FXML
+    protected void ButtonEditClick() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Calculadora.class.getResource("Parametros.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Calculadora Científica");
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 
