@@ -12,22 +12,19 @@ public class main {
     private static final int DECIMAL_PLACES = 10; // Cantidad de decimales a mostrar/calcular
 
     public static void main(String[] args) {
-        Map<String, BigDecimal> variables = new HashMap<>();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("\nIngrese una expresión matemática (ejemplo: sin(x) + cos(x)):");
-        String expresionUsuario = scanner.nextLine();
+        Funciones funciones = new Funciones();
 
-        try {
-            ExpresionMatematica expresion = new ExpresionMatematica(expresionUsuario);
-            BigDecimal resultado = expresion.evaluar();
+        // Intervalo y número de subdivisiones
+        BigDecimal a = BigDecimal.ONE;
+        BigDecimal b = BigDecimal.TWO;
+        int n = 1000;
 
-            String resultadoStr = resultado.setScale(DECIMAL_PLACES, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString();
-            System.out.println("Resultado: " + resultadoStr);
+        // Expresión de la función
+        String expresion = "cos(x)";
 
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+        // Calcular la integral
+        BigDecimal resultado = funciones.inte(a, b, n, expresion);
+        System.out.println("Resultado de la integral: " + resultado);
     }
-
 
 }

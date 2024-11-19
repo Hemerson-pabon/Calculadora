@@ -5,13 +5,17 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
 import java.math.BigDecimal;
 
-// Clase principal para usar el analizador
 public class ExpresionMatematica {
 
-    private static int n = 1000;
+    private static int n = 1000; // Número de divisiones por defecto
     private String expresion;
 
-    // Set para el valor de n de las series de potencias
+    // Constructor
+    public ExpresionMatematica(String expresion) {
+        this.expresion = expresion;
+    }
+
+    // Métodos para configurar 'n'
     public static void setN(int n) {
         ExpresionMatematica.n = n;
     }
@@ -20,15 +24,11 @@ public class ExpresionMatematica {
         return n;
     }
 
+    // Instancia de Funciones matemáticas
     private static final Funciones funciones = new Funciones();
 
-    ExpresionMatematica(String expresion){
-        this.expresion = expresion;
-    }
-
-
-
-    public BigDecimal evaluar(){
+    // Evaluar una expresión directamente o con la función 'inte'
+    public BigDecimal evaluar() {
         Expression expression = new ExpressionBuilder(expresion)
                 .function(sin)
                 .function(cos)
@@ -36,14 +36,17 @@ public class ExpresionMatematica {
                 .function(ln)
                 .function(pow)
                 .function(sqrt)
+                .function(inte)
+                .variables("e", "π")
                 .build()
                 .setVariable("e", 2.718281828459045)
                 .setVariable("π", 3.141592653589793);
+
         double result = expression.evaluate();
         return BigDecimal.valueOf(result);
     }
 
-    // Crear las funciones personalizadas
+    // Funciones personalizadas
 
     Function sin = new Function("sin", 1) {
         @Override
@@ -76,7 +79,7 @@ public class ExpresionMatematica {
     Function pow = new Function("pow", 2) {
         @Override
         public double apply(double... args) {
-            return funciones.a_elevado(BigDecimal.valueOf(args[0]), BigDecimal.valueOf(args[1]), n ).doubleValue();
+            return funciones.a_elevado(BigDecimal.valueOf(args[0]), BigDecimal.valueOf(args[1]), n).doubleValue();
         }
     };
 
@@ -87,5 +90,14 @@ public class ExpresionMatematica {
         }
     };
 
+    Function inte = new Function("integ", 2) {
+        @Override
+        public double apply(double... args) {
+            BigDecimal a = BigDecimal.valueOf(args[0]);
+            BigDecimal b = BigDecimal.valueOf(args[1]);
+            String expresion = "e^((-x^2)/2)";
+            return funciones.inte(a, b, n, expresion).doubleValue();
+        }
+    };
 
 }

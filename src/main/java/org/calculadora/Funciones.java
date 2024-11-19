@@ -1,4 +1,7 @@
 package org.calculadora;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -181,7 +184,44 @@ public class Funciones {
         return guess.round(new MathContext(precision, RoundingMode.HALF_UP));
     }
 
+    public BigDecimal inte(BigDecimal a, BigDecimal b, int n, String expresion) {
+        // Convertir los límites a double
+        double aDouble = a.doubleValue();
+        double bDouble = b.doubleValue();
 
+        // Calcular el tamaño del subintervalo
+        double h = (bDouble - aDouble) / n;
+
+        // Preparar la expresión con Exp4j
+        Expression expression = new ExpressionBuilder(expresion)
+                .variable("x") // Variable a evaluar
+                .build();
+
+        // Inicializar la suma
+        double suma = 0.0;
+
+        try {
+            // Evaluar los extremos
+            expression.setVariable("x", aDouble);
+            suma += expression.evaluate() / 2.0;
+
+            expression.setVariable("x", bDouble);
+            suma += expression.evaluate() / 2.0;
+
+            // Evaluar los puntos intermedios
+            for (int i = 1; i < n; i++) {
+                double xi = aDouble + i * h;
+                expression.setVariable("x", xi);
+                suma += expression.evaluate();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error al evaluar la expresión: " + e.getMessage(), e);
+        }
+
+        // Convertir el resultado a BigDecimal antes de devolverlo
+        return BigDecimal.valueOf(suma * h);
+    }
 
 
 }
+

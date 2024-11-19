@@ -12,7 +12,7 @@ import java.math.RoundingMode;
 
 public class CalculadoraController {
 
-    private static int cantDecimales = 3; // Cantidad de decimales a mostrar
+    private static int cantDecimales = 5; // Cantidad de decimales a mostrar
 
     public static void setCantDecimales(int cantDecimales) {
         CalculadoraController.cantDecimales = cantDecimales;
@@ -177,6 +177,11 @@ public class CalculadoraController {
     protected void ButtonXCuadClick(){
         AsignarNum("^2");
     }
+    @FXML
+    protected void ButtonIntClick(){
+        AsignarNum("integ( , )");
+    }
+
 
     // Botones de constantes
     @FXML
@@ -187,6 +192,7 @@ public class CalculadoraController {
     protected void ButtoneSClick(){
         AsignarNum("e");
     }
+
 
     // Botón de limpiar y remover
     @FXML
@@ -220,6 +226,7 @@ public class CalculadoraController {
         stage.setScene(scene);
         stage.show();
     }
+
 
 
 

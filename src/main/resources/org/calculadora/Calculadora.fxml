@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.calculadora.CalculadoraController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #FFFFFf;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.calculadora.CalculadoraController">
    <children>
       <VBox prefHeight="600.0" prefWidth="400.0">
          <children>
-            <MenuBar prefHeight="25.0" prefWidth="400.0">
+            <MenuBar prefHeight="25.0" prefWidth="400.0" style="-fx-background-color: #FFF;">
               <menus>
                 <Menu mnemonicParsing="false" text="Opciones">
                   <items>
@@ -33,14 +33,14 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <TextField fx:id="FieldExpresion" editable="false" layoutX="14.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="358.0">
+                  <TextField fx:id="FieldExpresion" editable="false" layoutX="11.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="358.0" style="-fx-border-color: #000;">
                      <font>
-                        <Font size="23.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="FieldTemp" layoutX="11.0" layoutY="55.0" prefHeight="50.0" prefWidth="358.0">
+                  <TextField fx:id="FieldTemp" layoutX="11.0" layoutY="55.0" prefHeight="50.0" prefWidth="358.0" style="-fx-border-color: #555;">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                   </TextField>
                </children>
@@ -62,105 +62,105 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#ButtonResultClick" prefHeight="82.0" prefWidth="117.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                  <Button mnemonicParsing="false" onAction="#ButtonResultClick" prefHeight="82.0" prefWidth="117.0" style="-fx-background-color: #5DEDCB; -fx-border-color: #94ffe3; -fx-border-width: 3;" text="=" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="30.0" />
+                        <Font name="Roboto Medium" size="30.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonZeroClick" prefHeight="83.0" prefWidth="171.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <Button mnemonicParsing="false" onAction="#ButtonZeroClick" prefHeight="83.0" prefWidth="171.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="0" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonFourClick" prefHeight="72.0" prefWidth="139.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#ButtonFourClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="4" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonFiveClick" prefHeight="72.0" prefWidth="139.0" text="5" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#ButtonFiveClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="5" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonOneClick" prefHeight="72.0" prefWidth="139.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#ButtonOneClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="1" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonTwoClick" prefHeight="72.0" prefWidth="139.0" text="2" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#ButtonTwoClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="2" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonSixClick" prefHeight="72.0" prefWidth="139.0" text="6" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#ButtonSixClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="6" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonThreeClick" prefHeight="72.0" prefWidth="139.0" text="3" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#ButtonThreeClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="3" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonSevenClick" prefHeight="72.0" prefWidth="139.0" text="7" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtonSevenClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="7" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonEightClick" prefHeight="72.0" prefWidth="139.0" text="8" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtonEightClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="8" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonNineClick" prefHeight="72.0" prefWidth="139.0" text="9" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtonNineClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #7CC6FE; -fx-border-color: #a1d8ff; -fx-border-width: 3;" text="9" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonSumClick" prefHeight="72.0" prefWidth="139.0" text="+" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#ButtonSumClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text="+" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonSubClick" prefHeight="72.0" prefWidth="139.0" text="_" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#ButtonSubClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text="_" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="25.0" />
                      </font>
                      <padding>
                         <Insets bottom="15.0" />
@@ -169,137 +169,137 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonProdClick" prefHeight="72.0" prefWidth="139.0" text="x" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtonProdClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text="x" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonDivClick" prefHeight="72.0" prefWidth="139.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonDivClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text="/" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonRemoveCharClick" prefHeight="72.0" prefWidth="139.0" text="&lt;-" GridPane.columnIndex="4">
+                  <Button mnemonicParsing="false" onAction="#ButtonRemoveCharClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #E4717A; -fx-border-color: #e18b93; -fx-border-width: 3;" text="⌫" textFill="WHITE" GridPane.columnIndex="4">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="23.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonClearAllClick" prefHeight="72.0" prefWidth="139.0" text="CE" GridPane.columnIndex="3">
+                  <Button mnemonicParsing="false" onAction="#ButtonClearAllClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #E4717A; -fx-border-color: #e18b93; -fx-border-width: 3;" text="CE" textFill="WHITE" GridPane.columnIndex="3">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="23.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonaClick" prefHeight="72.0" prefWidth="139.0" text="a^x">
+                  <Button mnemonicParsing="false" onAction="#ButtonaClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="a^x" textFill="WHITE">
                      <font>
-                        <Font name="Lexend Deca Regular" size="16.0" />
+                        <Font name="Roboto Medium" size="21.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonLnClick" prefHeight="72.0" prefWidth="139.0" text="ln(x)" GridPane.rowIndex="5">
+                  <Button mnemonicParsing="false" onAction="#ButtonLnClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="ln(x)" textFill="WHITE" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Lexend Deca Regular" size="16.0" />
+                        <Font name="Roboto Medium" size="17.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtoneClick" prefHeight="72.0" prefWidth="139.0" text="e^x" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtoneClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="e^x" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Lexend Deca Regular" size="16.0" />
+                        <Font name="Roboto Medium" size="21.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonPiClick" prefHeight="72.0" prefWidth="139.0" text="π" GridPane.columnIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonPiClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F6BC66; -fx-border-color: #ffd59b; -fx-border-width: 3;" text="π" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
-                        <Font name="Lexend Deca Regular" size="24.0" />
+                        <Font name="Roboto Medium" size="24.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonXCuadClick" prefHeight="72.0" prefWidth="139.0" text="x²" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonXCuadClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="x²" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtoneSClick" prefHeight="72.0" prefWidth="139.0" text="e" GridPane.columnIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtoneSClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F6BC66; -fx-border-color: #ffd59b; -fx-border-width: 3;" text="e" textFill="WHITE" GridPane.columnIndex="2">
                      <font>
-                        <Font name="Lexend Deca Regular" size="24.0" />
+                        <Font name="Roboto Medium" size="24.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonSqrtClick" prefHeight="72.0" prefWidth="139.0" text="√x" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#ButtonSqrtClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="√x" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Lexend Deca Regular" size="16.0" />
+                        <Font name="Roboto Medium" size="23.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonSinClick" prefHeight="72.0" prefWidth="139.0" text="Sin(x)" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#ButtonSinClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="Sin(x)" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Lexend Deca Regular" size="15.0" />
+                        <Font name="Roboto Medium" size="15.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonCosClick" prefHeight="72.0" prefWidth="139.0" text="Cos(x)" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#ButtonCosClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="Cos(x)" textFill="WHITE" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Lexend Deca Regular" size="14.0" />
+                        <Font name="Roboto Medium" size="14.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Button mnemonicParsing="false" onAction="#ButtonIntClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #F68C70; -fx-border-color: #ffae9c; -fx-border-width: 3;" text="int()" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="18.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonPointClick" prefHeight="72.0" prefWidth="139.0" text="." GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <Button mnemonicParsing="false" onAction="#ButtonPointClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text="." textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <font>
-                        <Font name="Lexend Deca Regular" size="28.0" />
+                        <Font name="Roboto Medium" size="23.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonOpenPClick" prefHeight="72.0" prefWidth="139.0" text="(" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonOpenPClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text="(" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#ButtonClosePClick" prefHeight="72.0" prefWidth="139.0" text=")" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#ButtonClosePClick" prefHeight="72.0" prefWidth="139.0" style="-fx-background-color: #8789C0; -fx-border-color: #bdbfdf; -fx-border-width: 3;" text=")" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Lexend Deca Regular" size="22.0" />
+                        <Font name="Roboto Medium" size="22.0" />
                      </font>
                      <GridPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
